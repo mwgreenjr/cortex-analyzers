@@ -1,0 +1,11 @@
+{
+    "name": "Example",
+    "author": "Nils Kuhnert, CERT-Bund",
+    "url": "https://github.com/BSI-CERT-Bund/cortex-analyzers",
+    "version": "0.1",
+    "baseConfig": "EVAA",
+    "config": {},
+    "description": "This is an example analyzer. It returns nothing.",
+    "dataTypeList": ["ip", "domain"],
+    "command": "Example/example_analyzer.py"
+}

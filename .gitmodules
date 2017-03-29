@@ -1,0 +1,3 @@
+[submodule "report-templates"]
+	path = report-templates
+	url = https://github.com/BSI-CERT-Bund/cortex-analyzers-templates.git

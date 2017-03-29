@@ -1,0 +1,10 @@
+beautifulsoup4
+ipaddress
+progressbar2
+pymisp
+pypdns
+pypssl
+requests
+yara-python
+sphinx
+sphinx_rtd_theme
