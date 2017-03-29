@@ -20,5 +20,19 @@ setup(
         'Topic :: Security',
         'Topic :: Software Development :: Libraries :: Python Modules'],
     py_modules=['cortexutils3.analyzer'],
-    packages=find_packages()
+    packages=find_packages(),
+    install_requires=[
+        'beautifulsoup4',
+        'ipaddress',
+        'progressbar2',
+        'pymisp',
+        'pypdns',
+        'pypssl',
+        'requests',
+        'yara-python',
+        'sphinx',
+        'sphinx_rtd_theme',
+        'sphinx-autodoc-typehints'
+    ]
+
 )
