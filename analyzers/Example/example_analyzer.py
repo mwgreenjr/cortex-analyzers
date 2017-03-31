@@ -16,7 +16,7 @@ class MinimalPythonAnalyzer(Analyzer):
         python dictionary. """
 
         # Report an empty dict. report function is defined in cortexutils3.analyzer
-        self.report({})
+        self.report({'results': self.getData()})
 
     def summary(self, raw: dict) -> dict:
         """The summary is used for the short templates.
