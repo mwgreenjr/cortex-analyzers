@@ -202,7 +202,7 @@ class Analyzer:
         # domain
         self.regex.append({
             'type': 'domain',
-            'regex': re.compile(r'^(?!http\:\/\/|https\:\/\/)([0-9a-zA-Z]*\.)*([a-z]{2,9})$')
+            'regex': re.compile(r'^(?!http\:\/\/|https\:\/\/)^[\w\-]+\.\w+$')
         })
 
         # hash
@@ -214,14 +214,33 @@ class Analyzer:
         # user-agent
         self.regex.append({
             'type': 'user-agent',
-            'regex': re.compile(r'(Mozilla\/[45]\.0 |AppleWebKit\/[0-9]{3}\.[0-9]{2} |Chrome\/[0-9]{2}\.[0-9]\.[0-9]{4}'
-                                r'\.[0-9]{3} |Safari\/[0-9]{3}\.[0-9]{2} )')
+            'regex': re.compile(r'^(Mozilla\/[45]\.0 |AppleWebKit\/[0-9]{3}\.[0-9]{2} |Chrome\/[0-9]{2}\.[0-9]\.'
+                                r'[0-9]{4}\.[0-9]{3} |Safari\/[0-9]{3}\.[0-9]{2} ).*?$')
         })
 
         # uri_path
         self.regex.append({
             'type': 'uri_path',
             'regex': re.compile(r'^(?!http\:\/\/|https\:\/\/)[A-Za-z]*\:\/\/')
+        })
+
+        # regkey
+        self.regex.append({
+            'type': 'registry',
+            'regex': re.compile(r'^(HKEY|HKLM|HKCU|HKCR|HKCC)'
+                                r'(_LOCAL_MACHINE|_CURRENT_USER|_CURRENT_CONFIG|_CLASSES_ROOT|)[\\a-zA-Z0-9]+$')
+        })
+
+        # mail
+        self.regex.append({
+            'type': 'mail',
+            'regex': re.compile(r'[\w\.\-]+@\w+\.[\w\.]+')
+        })
+
+        # fqdn
+        self.regex.append({
+            'type': 'fqdn',
+            'regex': re.compile(r'^(?!http\:\/\/|https\:\/\/)^[\w\-\.]+\.[\w\-]+\.\w+$')
         })
 
     def summary(self, raw: dict) -> dict:
