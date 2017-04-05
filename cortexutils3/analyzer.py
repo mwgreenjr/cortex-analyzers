@@ -153,9 +153,10 @@ class Analyzer:
         :returns: Data type of value, if known, else empty string 
         """
 
-        for r in self.regex:
-            if r.get('regex').match(value):
-                return r.get('type')
+        if isinstance(value, str):
+            for r in self.regex:
+                if r.get('regex').match(value):
+                    return r.get('type')
         return ''
 
     def __init_regex(self) -> None:
