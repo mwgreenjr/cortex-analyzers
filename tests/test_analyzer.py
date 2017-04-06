@@ -14,7 +14,7 @@ from io import StringIO
 class TestAnalyzerMinimalConfig(unittest.TestCase):
     def setUp(self):
         path = os.path.dirname(os.path.abspath(__file__))
-        with open(os.path.join(path, 'minimal_config.json'), mode='r') as afile:
+        with open(os.path.join(path, 'resources/minimal_config.json'), mode='r') as afile:
             input_str = afile.read()
             sys.stdin = StringIO(input_str)
             self.analyzer = Analyzer()
@@ -34,7 +34,7 @@ class TestAnalyzerMinimalConfig(unittest.TestCase):
 class TestAnalyzerProxyConfig(unittest.TestCase):
     def setUp(self):
         path = os.path.dirname(os.path.abspath(__file__))
-        with open(os.path.join(path, 'proxy_config.json'), mode='r') as afile:
+        with open(os.path.join(path, 'resources/proxy_config.json'), mode='r') as afile:
             input_str = afile.read()
             sys.stdin = StringIO(input_str)
             self.analyzer = Analyzer()
