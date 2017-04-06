@@ -5,6 +5,12 @@
 
 CERT-Bund TheHive/Cortex Analyzer Subset
 ========================================
+Build
+-----
+
+.. image:: https://travis-ci.org/BSI-CERT-Bund/cortex-analyzers.svg?branch=master
+    :target: https://travis-ci.org/BSI-CERT-Bund/cortex-analyzers
+
 About
 -----
 TheHive is a security incident response software, which is segmented in ui and backend
