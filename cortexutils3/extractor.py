@@ -1,10 +1,61 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
 import re
 
 
 class Extractor:
     """
-    The extractor class tries to detect ioc attribute types using regex-matching.
+    The extractor class tries to detect ioc attribute types using regex-matching. Two functions are provided:
+      - ``check_string(str)`` which checks a string for a regex match and just returns the type
+      - ``check_iterable(itr)`` that iterates over a list or a dictionary and returns a list of {type, value} dicts
+      
+    Currently, this is not a fulltext search, so the the ioc's must be isolated strings, to get found.
+    This can be iterated for ioc's e.g.:
+    
+    .. code-block:: python
+    
+        'results': [
+                {
+                    'This is an totally unimportant key': '127.0.0.1'
+                },
+                {
+                    'Totally nested!': ['https://nestedurl.verynested.com']
+                }
+            ],
+            'some_more': '7ef8b3dc5bf40268f66721a89b95f4c5f0cc08e34836f8c3a007ceed193654d4',
+            'another_list': ['google.de', 'bing.com', 'www.fqdn.de']
+        }
+    
+    And the result is:
+    
+    .. code-block:: python
+    
+        [
+            {
+                'type': 'hash',
+                'value': '7ef8b3dc5bf40268f66721a89b95f4c5f0cc08e34836f8c3a007ceed193654d4'
+            },
+            {
+                'type': 'ip',
+                'value': '127.0.0.1'
+            },
+            {
+                'type': 'url',
+                'value': 'https://nestedurl.verynested.com'
+            },
+            {
+                'type': 'domain',
+                'value': 'google.de'
+            },
+            {
+                'type': 'domain',
+                'value': 'bing.com'
+            },
+            {
+                'type': 'fqdn',
+                'value': 'www.fqdn.de'
+            }
+        ]
+    
     """
     def __init__(self):
         self.regex = self.__init_regex()
