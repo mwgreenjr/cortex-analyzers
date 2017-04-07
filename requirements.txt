@@ -9,4 +9,3 @@ yara-python
 sphinx
 sphinx_rtd_theme
 sphinx-autodoc-typehints
-
