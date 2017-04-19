@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import pypssl
-from cortexutils3.analyzer import Analyzer
+from cortexutils.analyzer import Analyzer
 
 
 class CIRCLPassiveSSLAnalyzer(Analyzer):

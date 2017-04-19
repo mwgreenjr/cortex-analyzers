@@ -9,7 +9,7 @@ import datetime as dt
 import pytz
 from dateutil.parser import parse
 
-from cortexutils3.analyzer import Analyzer
+from cortexutils.analyzer import Analyzer
 
 
 class FireholBlocklistsAnalyzer(Analyzer):

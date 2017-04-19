@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import pypdns
-from cortexutils3.analyzer import Analyzer
+from cortexutils.analyzer import Analyzer
 from typing import Union
 
 
