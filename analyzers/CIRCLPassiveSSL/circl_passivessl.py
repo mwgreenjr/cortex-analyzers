@@ -29,9 +29,9 @@ class CIRCLPassiveSSLAnalyzer(Analyzer):
         # Check for empty result, on empty resultset return with an error.
         # result is always assigned, self.error exits the function.
         if not result.get(ip, None):
-            self.error('No data available for {0} in passiveSSL.'.format(ip))
-
-        certificates = list(result.get(ip).get('certificates'))
+            certificates = []
+        else:
+            certificates = list(result.get(ip).get('certificates'))
         newresult = {'ip': ip,
                      'certificates': []}
         for cert in certificates:
