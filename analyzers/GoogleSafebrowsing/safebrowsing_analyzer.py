@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import safebrowsing
-from cortexutils3.analyzer import Analyzer
+from cortexutils.analyzer import Analyzer
 
 class SafebrowsingAnalyzer(Analyzer):
     """Enables TheHive to query Google Safebrowsing for URLs. Info how to obtain an API key can be found

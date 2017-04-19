@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """
 This contains the unit tests for the extractor.
 """
 import unittest
 
-from cortexutils3.extractor import Extractor
+from cortexutils.extractor import Extractor
 
 
 class TestExtractorValidInput(unittest.TestCase):
@@ -16,6 +16,13 @@ class TestExtractorValidInput(unittest.TestCase):
     def test_single_fqdn(self):
         self.assertEqual(
             self.extractor.check_string(value='www.google.de'),
+            'fqdn',
+            'FQDN single string: wrong data type.'
+        )
+
+    def test_single_fqdn_as_unicode(self):
+        self.assertEqual(
+            self.extractor.check_string(value=u'www.google.de'),
             'fqdn',
             'FQDN single string: wrong data type.'
         )

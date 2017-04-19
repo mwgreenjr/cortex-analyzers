@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from cortexutils3.analyzer import Analyzer
+from cortexutils.analyzer import Analyzer
 
 
 class MinimalPythonAnalyzer(Analyzer):

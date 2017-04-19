@@ -1,7 +1,0 @@
-{
-  "dataType": "file",
-  "config": {
-    "rules": "RULEPATH"
-  },
-  "file": "FILEPATH"
-}
