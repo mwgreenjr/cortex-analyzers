@@ -16,7 +16,7 @@ sys.path.insert(0, __abspath__)
 
 
 def load_data(file: str):
-    with io.open(os.path.join(__abspath__, file)) as afile:
+    with io.open(os.path.join(__abspath__, 'test_data', file)) as afile:
         input_str = afile.read().replace('PATH', os.path.join(__abspath__, 'test_data'))
     sys.stdin = io.StringIO(input_str)
     sys.stdout = io.StringIO()
