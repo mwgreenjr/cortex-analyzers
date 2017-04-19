@@ -32,7 +32,7 @@ setup(
         'yara-python',
         'sphinx',
         'sphinx_rtd_theme',
-        'sphinx-autodoc-typehints'
+        'sphinx-autodoc-typehints',
     ],
     test_suite='tests'
 )

@@ -12,7 +12,6 @@ class TestExtractorValidInput(unittest.TestCase):
 
     def setUp(self):
         self.extractor = Extractor()
-        self.maxDiff = None
 
     def test_single_fqdn(self):
         self.assertEqual(
