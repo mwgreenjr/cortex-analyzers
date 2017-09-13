@@ -16,8 +16,8 @@ For configuring the FireHOL IP Blocklists analyzer, the cortex configuration fil
 
 .. code-block:: python
 
-    FireholBlocklists {
-        blocklistspath="/tmp/fireholblocklists" # Path to blocklists cloned from github
+    FireHOLBlocklists {
+        blocklistpath="/tmp/fireholblocklists" # Path to blocklists cloned from github
         ignoredays="365" # Ignore lists older than x days - NOT IMPEMENTED YET
     }
 
